@@ -1,0 +1,23 @@
+name: "Panther X2 LoRa Gateway"
+version: "0.1.0"
+slug: "panther_lora"
+description: "SX1302 + SX1257 packet forwarder for the MerryIoT Panther X2 (EU868, /dev/spidev3.0)"
+url: "https://github.com/REVANOX/panther-x2-lora-addon"
+arch:
+  - aarch64
+init: false
+startup: services
+boot: auto
+host_network: true
+devices:
+  - /dev/spidev3.0
+  - /dev/gpiochip3
+  - /dev/gpiochip4
+options:
+  server_address: "127.0.0.1"
+  server_port: 1700
+  gateway_id: "0016c001f1002b9f"
+schema:
+  server_address: str
+  server_port: port
+  gateway_id: str
